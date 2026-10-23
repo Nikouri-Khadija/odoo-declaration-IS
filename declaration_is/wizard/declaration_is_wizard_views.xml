@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ============================================================
+         Vue formulaire du wizard Déclaration IS
+    ============================================================ -->
+    <record id="declaration_is_wizard_form_view" model="ir.ui.view">
+        <field name="name">declaration.is.wizard.form</field>
+        <field name="model">declaration.is.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Déclarer l'Impôt sur les Sociétés (IS)">
+
+                <sheet>
+                    <!-- Titre visuel -->
+                    <div class="oe_title">
+                        <h1>Déclaration IS - Liasse Fiscale</h1>
+                    </div>
+
+                    <group string="Société">
+                        <field name="company_id" options="{'no_create': True}"/>
+                    </group>
+
+                    <group string="Exercice N ">
+                        <field name="date_debut_n"/>
+                        <field name="date_fin_n"/>
+                    </group>
+
+                    <group string="Exercice N-1 ">
+                        <field name="date_debut_n1" readonly="1"/>
+                        <field name="date_fin_n1"   readonly="1"/>
+                    </group>
+
+                </sheet>
+
+                <!-- Pied de page avec le bouton principal -->
+                <footer>
+                    <button
+                        name="action_generer_declaration"
+                        string="Générer la déclaration IS"
+                        type="object"
+                        class="btn-primary"
+                        data-hotkey="q"
+                    />
+                    <button
+                        string="Annuler"
+                        class="btn-secondary"
+                        special="cancel"
+                    />
+                </footer>
+
+            </form>
+        </field>
+    </record>
+
+    <!-- ============================================================
+         Action qui ouvre le wizard
+    ============================================================ -->
+    <record id="action_declaration_is_wizard" model="ir.actions.act_window">
+        <field name="name">Déclarer IS</field>
+        <field name="res_model">declaration.is.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

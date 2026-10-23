@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ============================================================
+         Entrée de menu dans la section Facturation / Comptabilité
+         On se rattache au menu "Facturation" (account) existant.
+    ============================================================ -->
+
+    <!-- Titre de section : "Déclaration IS" sous Facturation -->
+    <menuitem
+        id="menu_declaration_is_root"
+        name="Déclaration IS"
+        parent="account.menu_finance"
+        sequence="99"
+        groups="account.group_account_user"
+    />
+
+    <!-- Sous-menu 1 : Déclarer IS (ouvre le wizard) -->
+    <menuitem
+        id="menu_declaration_is_wizard"
+        name="Déclarer IS"
+        parent="menu_declaration_is_root"
+        action="declaration_is.action_declaration_is_wizard"
+        sequence="10"
+        groups="account.group_account_user"
+    />
+
+    <!-- Sous-menu 2 : Historique des déclarations (à coder plus tard) -->
+    <menuitem
+        id="menu_declaration_is_historique"
+        name="Historique des déclarations"
+        parent="menu_declaration_is_root"
+        action="declaration_is.action_declaration_is_history"
+        sequence="20"
+        groups="account.group_account_user"
+    />
+
+</odoo>

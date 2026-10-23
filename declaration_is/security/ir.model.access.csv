@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_declaration_is_wizard_user,declaration.is.wizard user,model_declaration_is_wizard,account.group_account_user,1,1,1,1
+access_declaration_is_wizard_manager,declaration.is.wizard manager,model_declaration_is_wizard,account.group_account_manager,1,1,1,1
+access_declaration_is_history_user,declaration.is.history user,model_declaration_is_history,account.group_account_user,1,1,1,1
+access_declaration_is_history_manager,declaration.is.history manager,model_declaration_is_history,account.group_account_manager,1,1,1,1

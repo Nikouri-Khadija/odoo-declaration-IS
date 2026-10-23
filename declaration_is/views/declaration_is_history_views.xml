@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Vue liste -->
+    <record id="view_declaration_is_history_tree" model="ir.ui.view">
+        <field name="name">declaration.is.history.tree</field>
+        <field name="model">declaration.is.history</field>
+        <field name="arch" type="xml">
+            <list string="Historique des déclarations IS">
+                <field name="company_id"/>
+                <field name="annee_exercice"/>
+                <field name="date_generation" width="150"/>
+                <field name="statut" widget="badge" decoration-success="statut == 'generated'"/>
+                <field name="xml_filename"/>
+                <button name="action_download_zip" type="object" string="Télécharger" icon="fa-download"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Action fenêtre -->
+    <record id="action_declaration_is_history" model="ir.actions.act_window">
+        <field name="name">Historique des déclarations IS</field>
+        <field name="res_model">declaration.is.history</field>
+        <field name="view_mode">list</field>   <!-- aussi 'list' au lieu de 'tree' -->
+        <field name="view_id" ref="view_declaration_is_history_tree"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Aucune déclaration IS générée pour l'instant.
+            </p>
+        </field>
+    </record>
+
+</odoo>
